@@ -43,32 +43,32 @@ class g1_locomimic_beyondmimic(G1RlLocoMimicPipelineCfg):
     robot: str = "g1"
     env: G1MujocoEnvCfg = G1MujocoEnvCfg()
     ctrl: list[KeyboardCtrlCfg | JoystickCtrlCfg] = [
-        KeyboardCtrlCfg(
-            triggers={
-                "i": "[SIM_REBORN]",
-                "o": "[SHUTDOWN]",
-                "]": "[POLICY_LOCO]",
-                "[": "[POLICY_MIMIC]",
-                ";": "[POLICY_SWITCH],NEXT",
-                "'": "[POLICY_SWITCH],LAST",
-            }
-        ),
-        # JoystickCtrlCfg(
-        #     combination_init_buttons=[],
+        # KeyboardCtrlCfg(
         #     triggers={
-        #         "A": "[SHUTDOWN]",
-        #         "Back": "[POLICY_LOCO]",
-        #         "Start": "[POLICY_MIMIC]",
-        #         "RB": "[POLICY_SWITCH],NEXT",
-        #         "LB": "[POLICY_SWITCH],LAST",
-        #     },
+        #         "i": "[SIM_REBORN]",
+        #         "o": "[SHUTDOWN]",
+        #         "]": "[POLICY_LOCO]",
+        #         "[": "[POLICY_MIMIC]",
+        #         ";": "[POLICY_SWITCH],NEXT",
+        #         "'": "[POLICY_SWITCH],LAST",
+        #     }
         # ),
+        JoystickCtrlCfg(
+            combination_init_buttons=[],
+            triggers={
+                "A": "[SHUTDOWN]",
+                "Back": "[POLICY_LOCO]",
+                "Start": "[POLICY_MIMIC]",
+                "RB": "[POLICY_SWITCH],NEXT",
+                "LB": "[POLICY_SWITCH],LAST",
+            },
+        ),
     ]
 
-    # loco_policy: G1AmoPolicyCfg = G1AmoPolicyCfg()
+    loco_policy: G1AmoPolicyCfg = G1AmoPolicyCfg()
     # loco_policy: G1AsapLocoPolicyCfg = G1AsapLocoPolicyCfg()
     # loco_policy: G1UnitreePolicyCfg = G1UnitreePolicyCfg()
-    loco_policy: G1UnitreeWoGaitPolicyCfg = G1UnitreeWoGaitPolicyCfg()
+    # loco_policy: G1UnitreeWoGaitPolicyCfg = G1UnitreeWoGaitPolicyCfg()
     """Any LocoMotion policy, as init"""
 
     mimic_policies: list[G1BeyondMimicPolicyCfg] = [
@@ -110,16 +110,16 @@ class g1_locomimic_asap(G1RlLocoMimicPipelineCfg):
                 "'": "[POLICY_SWITCH],LAST",
             }
         ),
-        # JoystickCtrlCfg(
-        #     combination_init_buttons=[],
-        #     triggers={
-        #         "A": "[SHUTDOWN]",
-        #         "Back": "[POLICY_LOCO]",
-        #         "Start": "[POLICY_MIMIC]",
-        #         "RB": "[POLICY_SWITCH],NEXT",
-        #         "LB": "[POLICY_SWITCH],LAST",
-        #     },
-        # ),
+        JoystickCtrlCfg(
+            combination_init_buttons=[],
+            triggers={
+                "A": "[SHUTDOWN]",
+                "Back": "[POLICY_LOCO]",
+                "Start": "[POLICY_MIMIC]",
+                "RB": "[POLICY_SWITCH],NEXT",
+                "LB": "[POLICY_SWITCH],LAST",
+            },
+        ),
     ]
 
     loco_policy: G1AsapLocoPolicyCfg = G1AsapLocoPolicyCfg()
