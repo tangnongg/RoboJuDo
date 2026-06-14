@@ -65,16 +65,27 @@ class g1_locomimic_beyondmimic(G1RlLocoMimicPipelineCfg):
         # ),
     ]
 
-    loco_policy: G1AmoPolicyCfg = G1AmoPolicyCfg()
+    # loco_policy: G1AmoPolicyCfg = G1AmoPolicyCfg()
     # loco_policy: G1AsapLocoPolicyCfg = G1AsapLocoPolicyCfg()
     # loco_policy: G1UnitreePolicyCfg = G1UnitreePolicyCfg()
-    # loco_policy: G1UnitreeWoGaitPolicyCfg = G1UnitreeWoGaitPolicyCfg()
+    loco_policy: G1UnitreeWoGaitPolicyCfg = G1UnitreeWoGaitPolicyCfg()
     """Any LocoMotion policy, as init"""
 
     mimic_policies: list[G1BeyondMimicPolicyCfg] = [
         G1BeyondMimicPolicyCfg(policy_name="Dance_wose", without_state_estimator=True),
         G1BeyondMimicPolicyCfg(policy_name="Violin", without_state_estimator=False, max_timestep=500),
         G1BeyondMimicPolicyCfg(policy_name="Waltz", without_state_estimator=False, max_timestep=850),
+        G1BeyondMimicPolicyCfg(policy_name="motion1", without_state_estimator=False),
+        G1BeyondMimicPolicyCfg(policy_name="motion2", without_state_estimator=False),
+        G1BeyondMimicPolicyCfg(policy_name="motion3", without_state_estimator=False),
+        G1BeyondMimicPolicyCfg(policy_name="motion4", without_state_estimator=False),
+        G1BeyondMimicPolicyCfg(policy_name="motion5", without_state_estimator=False),
+        G1BeyondMimicPolicyCfg(policy_name="motion6", without_state_estimator=False),
+        G1BeyondMimicPolicyCfg(policy_name="motion7", without_state_estimator=False),
+        G1BeyondMimicPolicyCfg(policy_name="motion8", without_state_estimator=False),      
+        G1BeyondMimicPolicyCfg(policy_name="motion3minmodified", without_state_estimator=False), 
+        G1BeyondMimicPolicyCfg(policy_name="3min_wofs_wodj_modified", without_state_estimator=False),
+        G1BeyondMimicPolicyCfg(policy_name="4min_wwofs_wodj_modified", without_state_estimator=False),
     ]
 
 
